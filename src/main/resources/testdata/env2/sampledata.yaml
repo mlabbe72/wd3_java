@@ -1,0 +1,8 @@
+---
+id: "default"
+item1: "env2Value1"
+item2: "env2Value2"
+---
+id: "one"
+item1: "env2NewValue1"
+item2: "env2NewValue2"

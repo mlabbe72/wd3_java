@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Scrubbing Test Suite">
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+	</listeners>
+
+	
+		
+  	<test thread-count="4" name="Test Set" parallel="methods">
+
+		<!-- parameter name="browser_config" value="grid;chrome"/-->
+		<!-- parameter name="browser_config" value="testingbot;firefox;47;WIN8"/-->
+		<!-- parameter name="browser_config" value="smartbear;Chrome;61x64;Windows 10"/-->
+		
+		<!-- parameter name="lang_value" value="ES"/-->
+
+    	<classes>
+    	
+      		<class name="common.sample.SampleTestClass">
+      			<methods>
+      				<include name="SampleTest"/>
+      			</methods>
+      		</class>
+		    	          
+        </classes>
+    </test>
+       
+</suite>

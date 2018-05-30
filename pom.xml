@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>wd3</groupId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>common</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.9.10</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.googlecode.json-simple</groupId>
+    	<artifactId>json-simple</artifactId>
+    	<version>1.1.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>commons-beanutils</groupId>
+    	<artifactId>commons-beanutils</artifactId>
+    	<version>1.9.3</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.poi</groupId>
+    	<artifactId>poi-ooxml</artifactId>
+    	<version>3.9</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.seleniumhq.selenium</groupId>
+    	<artifactId>selenium-java</artifactId>
+    	<version>3.8.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>commons-io</groupId>
+    	<artifactId>commons-io</artifactId>
+    	<version>2.5</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.pdfbox</groupId>
+    	<artifactId>pdfbox</artifactId>
+    	<version>2.0.8</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.yaml</groupId>
+    	<artifactId>snakeyaml</artifactId>
+    	<version>1.5</version>
+    </dependency>
+    <dependency>
+    	<groupId>com.fasterxml.jackson.datatype</groupId>
+    	<artifactId>jackson-datatype-joda</artifactId>
+    	<version>2.4.0</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+  	<pluginManagement>
+  		<plugins>
+  			<plugin>
+  				<artifactId>maven-surefire-plugin</artifactId>
+  				<version>2.12.4</version>
+  				<configuration>
+  					<environmentVariables>
+  						<TEST_ENV>${testEnv}</TEST_ENV>
+  					</environmentVariables>
+  					<systemPropertyVariables>
+  						<browser_config>${browser}</browser_config>
+  						<testrail_id>${testRailID}</testrail_id>
+  						<lang_value>${langValue}</lang_value>
+  						<bamboo_buildkey>${bambooBuildKey}</bamboo_buildkey>
+  						<bamboo_buildno>${bambooBuildNo}</bamboo_buildno>
+  					</systemPropertyVariables>
+  					<suiteXmlFiles>
+  						<suiteXmlFile>src/test/resources/suites/${suiteFile}</suiteXmlFile>
+  					</suiteXmlFiles>
+  				</configuration>
+  			</plugin>
+  		</plugins>
+  	</pluginManagement>
+  </build>
+  <artifactId>wd3_java</artifactId>
+</project>
